@@ -9,4 +9,9 @@ public class CalculatorTest {
 	public void testEmpty() {
 		assertEquals(0, Calculator.add(""));
 	}
+
+	@Test
+	public void testOneNumber() {
+		assertEquals(2, Calculator.add("2"));
+	}
 }

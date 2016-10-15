@@ -7,7 +7,13 @@ public class Calculator {
 			return 0;
 		}
 		else{
-			return 1;
+			return convertToInt(input);
 		}
 	}
+
+	private static int convertToInt(String number){
+	return Integer.parseInt(number);
+
+	}
 }
+
