@@ -2,6 +2,8 @@ package is.ru.stringcalculator;
 
 import static org.junit.Assert.assertEquals;
 import org.junit.Test;
+import org.junit.rules.ExpectedException;
+import org.junit.Rule;
 
 public class CalculatorTest {
 
@@ -38,5 +40,10 @@ public class CalculatorTest {
     @Test
     public void testMultipleNumbersByNewLine(){
     	assertEquals(9, Calculator.add("1\n4\n4"));
+    }
+
+    @Test
+    public void testNumbersTooLarge(){
+    	assertEquals(14, Calculator.add("1001,3,9,2000,2"));
     }
 }

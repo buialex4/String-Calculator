@@ -18,7 +18,9 @@ public class Calculator {
 	}
 
 	private static int convertToInt(String number){
-		return Integer.parseInt(number);
+		int finalnumber = Integer.parseInt(number);
+		finalnumber = checkNumberIfTooLarge(finalnumber);
+		return finalnumber;
 	}
 
 	private static int sum(String[] numbers){
@@ -35,6 +37,13 @@ public class Calculator {
 
 	private static String[] splitNumbersByNewLine(String numbers){
 	    return numbers.split("\n");
+	}
+
+	private static int checkNumberIfTooLarge(int number){
+		if (number > 1000){
+			number = 0;
+		}
+		return number;
 	}
 }
 
