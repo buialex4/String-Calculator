@@ -7,7 +7,10 @@ public class Calculator {
 			return 0;
 		}
 		else if (input.contains(",")) {
-			return sum(splitNumbers(input));
+			return sum(splitNumbersByComma(input));
+		}
+		else if (input.contains("\n")){
+			return sum(splitNumbersByNewLine(input));
 		}
 		else{
 			return convertToInt(input);
@@ -26,8 +29,12 @@ public class Calculator {
 		return total;
 	}
 
-	private static String[] splitNumbers(String numbers){
+	private static String[] splitNumbersByComma(String numbers){
 	    return numbers.split(",");
+	}
+
+	private static String[] splitNumbersByNewLine(String numbers){
+	    return numbers.split("\n");
 	}
 }
 
