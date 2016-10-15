@@ -39,7 +39,7 @@ public class CalculatorTest {
 
     @Test
     public void testMultipleNumbersByNewLine(){
-    	assertEquals(9, Calculator.add("1\n4\n4"));
+    	assertEquals(12, Calculator.add("1\n4\n4,3"));
     }
 
     @Test

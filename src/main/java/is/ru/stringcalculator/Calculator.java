@@ -6,11 +6,8 @@ public class Calculator {
 		if(input.equals("")){
 			return 0;
 		}
-		else if (input.contains(",")) {
-			return sum(splitNumbersByComma(input));
-		}
-		else if (input.contains("\n")){
-			return sum(splitNumbersByNewLine(input));
+		else if (input.contains(",") || (input.contains("\n"))) {
+			return sum(splitNumbers(input));
 		}
 		else{
 			return convertToInt(input);
@@ -31,12 +28,9 @@ public class Calculator {
 		return total;
 	}
 
-	private static String[] splitNumbersByComma(String numbers){
-	    return numbers.split(",");
-	}
+	private static String[] splitNumbers(String numbers){
 
-	private static String[] splitNumbersByNewLine(String numbers){
-	    return numbers.split("\n");
+	    return numbers.split(",|\n");
 	}
 
 	private static int checkNumberIfTooLarge(int number){
